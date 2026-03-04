@@ -1,4 +1,4 @@
-### Brute Force approach###
+### Brute Force approach ###
 ## Time Complexity :- O(n^2)
 
 def twoSum(nums: list[int], target: int) -> list[int]:
@@ -7,5 +7,9 @@ def twoSum(nums: list[int], target: int) -> list[int]:
             if (i != j and nums[i]+ nums[j] == target):
                 return i, j
     return []
-        
-        
+
+
+lst = [2,7,11,15]
+t = 17
+
+print(twoSum(lst, t))
