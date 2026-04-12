@@ -1,35 +1,20 @@
-def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-    # returns false if the list is empty 
-    if not strs:
-        return []
-    
-    mpp = {} # an empty map
+from collections import Counter
 
-# returns a frequency string for each words
-    def getFrequencyString(s: str):
-        freq_list = [0] * 26
+nums = [1,1,1,1,5,5,6,7]
 
-        for char in s:
-            freq_list[ord(char) - ord('a')] += 1   # get the index value of characters and add +1 to it 
+freq1 = {}
+for i in nums:
+    if i in freq1:
+        freq1[i] += 1
+    else:
+        freq1[i] = 1
+        
+        
+freq2 = Counter(nums)
 
-        freq_Str = []
-        ch = 'a'
-
-        for position in freq_list:
-            freq_Str.append(ch)
-            freq_Str.append(str(position))
-            ch = chr(ord(ch)+1)
-
-        return "".join(freq_Str)
+print(type(freq1))
+print(type(freq2))
 
 
-
-    for i in strs:
-        fStr = getFrequencyString(i)
-
-        if fStr not in mpp:
-            mpp[fStr] = []
-
-        mpp[fStr].append(i)
-
-    return list(mpp.values())
+for i in freq1:
+    print(i)
